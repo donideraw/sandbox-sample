@@ -21,7 +21,5 @@ jobs:
           distribution: 'temurin'
     - name: Maven Package
       run: mvn clean package -DskipTests
-    - name: Publish package
-      run: mvn -B deploy -DskipTests
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
